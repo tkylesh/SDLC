@@ -48,36 +48,110 @@ Description:
    - Manual testing
    - Performance tests
 
-## Code Review Requirements
+## Code Review Process
 
-### Review Checklist
+### Review Requirements
 ```markdown
-Category        | Check Points
-----------------|-------------
-Functionality   | Logic, edge cases
-Security        | Vulnerabilities, access
-Performance     | Efficiency, scalability
-Maintainability | Clarity, structure
+Type          | Reviewers       | Approval Requirements
+--------------|-----------------|---------------------
+Standard      | 2 developers    | Both approve
+Critical      | 2 devs + lead   | All approve
+Security      | 2 devs + security| All approve + scan
+Database      | 2 devs + DBA    | All approve + DBA sign-off
 ```
 
-### Review Process
-1. **Initial Review**
-   - Code style
-   - Documentation
-   - Test coverage
-   - Security issues
-
-2. **Detailed Review**
-   - Logic check
+### Review Criteria
+1. **Code Quality**
+   - Style compliance
+   - Best practices
+   - Performance impact
+   - Security concerns
    - Error handling
-   - Edge cases
-   - Performance
-
-3. **Final Review**
-   - Integration
-   - Dependencies
-   - Configuration
    - Documentation
+
+2. **Testing**
+   - Unit tests
+   - Integration tests
+   - Performance tests
+   - Security tests
+   - UI/UX tests
+   - Documentation
+
+## Approval Process
+
+### Standard Changes
+```markdown
+Step          | Action          | Responsible
+--------------|-----------------|------------
+1            | Create PR       | Developer
+2            | Initial Review  | Reviewers
+3            | Address Comments| Developer
+4            | Final Review    | Reviewers
+5            | Merge Approval  | Team Lead
+6            | Merge          | Developer
+```
+
+### Critical Changes
+```markdown
+Step          | Action          | Responsible
+--------------|-----------------|------------
+1            | Create PR       | Developer
+2            | Initial Review  | Reviewers
+3            | Address Comments| Developer
+4            | Tech Lead Review| Tech Lead
+5            | Security Review | Security Team
+6            | Final Approval  | Project Manager
+7            | Merge          | DevOps
+```
+
+### Emergency Changes
+```markdown
+Step          | Action          | Responsible
+--------------|-----------------|------------
+1            | Create PR       | Developer
+2            | Quick Review    | Tech Lead
+3            | Emergency Review| Manager
+4            | Hotfix Merge   | DevOps
+5            | Post-Review    | Team
+6            | Documentation  | Developer
+```
+
+## Merge Requirements
+
+### Pre-Merge Checklist
+```markdown
+Category      | Requirements
+--------------|-------------
+Code          | □ Style compliance
+             | □ Best practices
+             | □ No code smells
+             | □ Error handling
+Testing       | □ Unit tests pass
+             | □ Integration tests
+             | □ UI/UX validation
+             | □ Performance check
+Security      | □ Security scan
+             | □ Vulnerability check
+             | □ Access review
+             | □ Data protection
+Documentation | □ Code comments
+             | □ API docs
+             | □ Release notes
+             | □ Change log
+```
+
+### Post-Merge Verification
+1. **Immediate**
+   - Build success
+   - Tests passing
+   - No conflicts
+   - Clean deployment
+
+2. **Follow-up**
+   - Integration check
+   - Performance verify
+   - Security scan
+   - Documentation update
 
 ## Conflict Resolution
 

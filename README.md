@@ -93,7 +93,15 @@ This repository contains the complete documentation for the Trexis Systems Devel
    - [Continuous Improvement](chapters/12-closing-thoughts/continuous-improvement.md)
    - [Implementation Guide](chapters/12-closing-thoughts/implementation-guide.md)
 
-13. [Future Updates](chapters/13-future-updates/README.md)
+13. [Database Management](chapters/13-database-management/README.md)
+   - SQL Change Management
+   - Database Version Control
+   - Deployment Procedures
+   - Rollback Procedures
+   - Data Migration
+   - Performance Optimization
+
+14. [Future Updates](chapters/14-future-updates/README.md)
    - Planned Improvements
    - Roadmap
    - Feedback Process

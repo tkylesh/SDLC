@@ -6,14 +6,49 @@ This document outlines the environment separation practices at Trexis Systems, e
 ## Environment Isolation
 
 ### Environment Types
+
+#### Environment Hierarchy
 ```markdown
-Environment   | Purpose           | Access Level
---------------|------------------|-------------
-Development   | Active dev work  | Developer
-Testing       | QA/Testing      | QA Team
-Staging       | Pre-production  | Limited
-Production    | Live system     | Restricted
+Level         | Environment      | Purpose                    | Access
+--------------|-----------------|---------------------------|--------
+1            | Production      | Live system               | Restricted
+2            | Staging        | Pre-release validation    | Limited
+3            | QA/Test        | Testing and validation    | QA Team
+4            | Development    | Active development        | Developers
 ```
+
+#### Environment Characteristics
+1. **Production**
+   - Live customer data
+   - Strict access controls
+   - Change approval required
+   - Full monitoring
+   - Regular backups
+   - High availability
+
+2. **Staging**
+   - Production-like
+   - Sanitized data
+   - Limited access
+   - Release testing
+   - Performance testing
+   - Security validation
+
+3. **QA/Test**
+   - Test data only
+   - Automated testing
+   - Manual testing
+   - Integration testing
+   - Performance testing
+   - Security testing
+
+4. **Development**
+   - Development data
+   - Local testing
+   - Unit testing
+   - Feature testing
+   - Quick iterations
+   - Developer tools
 
 ### Isolation Methods
 1. **Network**
@@ -39,6 +74,36 @@ Developer     | Dev/Test access   | Dev team
 QA            | Test access      | QA team
 Support       | Limited access   | Support
 ```
+
+### Access Management
+
+#### Environment Access Matrix
+```markdown
+Role          | Dev    | QA     | Staging | Prod
+--------------|--------|--------|---------|-------
+Developer     | Full   | Read   | None    | None
+QA Engineer   | Read   | Full   | Read    | None
+DevOps        | Full   | Full   | Full    | Limited
+DBA           | Full   | Full   | Full    | Limited
+Manager       | Read   | Read   | Read    | Read
+Admin         | Full   | Full   | Full    | Full
+```
+
+#### Access Requirements
+1. **Production**
+   - Formal request process
+   - Manager approval
+   - Security review
+   - Time-limited access
+   - Activity logging
+   - Regular review
+
+2. **Non-Production**
+   - Role-based access
+   - Team lead approval
+   - Standard duration
+   - Activity monitoring
+   - Periodic review
 
 ### Control Methods
 1. **Authentication**
@@ -77,6 +142,34 @@ Backups       | Limited       | Full
    - Regulations
    - Audit trails
    - Documentation
+
+## Deployment Procedures
+
+### Deployment Flow
+```markdown
+Stage         | From          | To            | Approvers
+--------------|---------------|---------------|----------
+Development   | Local        | Dev           | Team Lead
+Testing       | Dev          | QA            | QA Lead
+Staging       | QA           | Staging       | Project Manager
+Production    | Staging      | Production    | Change Board
+```
+
+### Deployment Requirements
+1. **Production Deployment**
+   - Change request
+   - Full testing results
+   - Security review
+   - Performance analysis
+   - Rollback plan
+   - Deployment window
+
+2. **Non-Production Deployment**
+   - Code review
+   - Test results
+   - Team lead approval
+   - Documentation
+   - Deployment plan
 
 ## Configuration Security
 
