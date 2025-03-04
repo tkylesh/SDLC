@@ -18,7 +18,8 @@ This repository contains the complete documentation for the Trexis Systems Devel
 | May 10-31, 2018 | R. Lane | Inclusion of W. Mullen review notes, approval of refinements from D. Franzen, and other updates |
 | May 10, 2019 | R. Lane | Updates based on focus groups and inclusion of GRC controls |
 | May 29, 2019 | R. Lane | Update to code review – added review items for screens, windows, pop-ups, etc. |
-
+| Feb 28, 2025 | Taylor Shuff | Update to Source Control,Security,New Database MGMT chapter |
+| March 1, 2025 | Taylor Shuff | Integrated new Content from Dev and Prod Environments,Code Approval and Merge,SQL Change |
 ## Table of Contents
 
 1. [Introduction](chapters/01-introduction/README.md)
